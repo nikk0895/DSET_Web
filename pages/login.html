@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .login-container {
+            background: white;
+            padding: 80px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn {
+            width: 106%;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .links {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        @media (max-width: 400px) {
+            .login-container {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input, .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn" onclick="validateLogin()">Login</button>
+        <div class="links">
+            <a href="#">Forgot Password?</a> | <a href="/pages/signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            if (username === "" || password === "") {
+                alert("Please enter both username and password");
+            } else {
+              window.location.href = "success.html";
+            }
+        }
+    </script>
+</body>
+</html>
